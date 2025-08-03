@@ -19,13 +19,15 @@
 
 
 / {
-
-    hold_ctrl_tap_to_layer0: behavior_hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        label = "Hold Ctrl / Tap Layer 0";
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&kp LCTRL &to 0>;
+    behaviors {
+        hold_ctrl_tap_to_layer0: behavior_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            label = "Hold Ctrl / Tap Layer 0";
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&to>;
+        };
     };
 
         keymap {
