@@ -20,30 +20,13 @@
 
 / {
 
-  to0: to0_behavior {
-    compatible = "zmk,behavior-layer-tap";
-    label = "To Layer 0";
-    bindings = <&to 0>;
-  };
-
-  hold_ctrl: hold_ctrl_behavior {
-    compatible = "zmk,behavior-hold-tap";
-    label = "Hold Ctrl";
-    bindings = <&kp LCTRL>;
-  };
-
-  aliases {
-    layer0 = &to0;
-    hold_ctrl = &hold_ctrl;
-  };
-
-  hold_ctrl_tap_to_base: behavior_hold-tap {
-    compatible = "zmk,behavior-hold-tap";
-    label = "Hold Ctrl / Tap to Layer 0";
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&hold_ctrl &layer0>;
-  };
+    hold_ctrl_tap_to_layer0: behavior_hold_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "Hold Ctrl / Tap Layer 0";
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&kp LCTRL &to 0>;
+    };
 
         keymap {
                 compatible = "zmk,keymap";
