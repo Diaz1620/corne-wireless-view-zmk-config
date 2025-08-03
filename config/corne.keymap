@@ -19,6 +19,18 @@
 
 
 / {
+  to0: to0_behavior {
+    compatible = "zmk,behavior-layer-tap";
+    label = "To Layer 0";
+    bindings = <&to 0>;
+  };
+
+  hold_ctrl: hold_ctrl_behavior {
+    compatible = "zmk,behavior-hold-tap";
+    label = "Hold Ctrl";
+    bindings = <&kp LCTRL>;
+  };
+
   aliases {
     layer0 = &to0;
     hold_ctrl = &kp_ctrl;
