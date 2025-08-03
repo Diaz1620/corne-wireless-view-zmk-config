@@ -31,9 +31,9 @@
     bindings = <&kp LCTRL>;
   };
 
-  aliases {
+    aliases {
     layer0 = &to0;
-    hold_ctrl = &kp_ctrl;
+    hold_ctrl = &hold_ctrl;
   };
 
   hold_ctrl_tap_to_base: behavior_hold-tap {
