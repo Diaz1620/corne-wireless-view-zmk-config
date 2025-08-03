@@ -17,7 +17,7 @@
   tapping-term-ms = <200>;
 };
 
-hold_ctrl_tap_to_base: behavior_hold_tap {
+&hold_ctrl_tap_to_base: behavior_hold_tap {
   compatible = "zmk,behavior-hold-tap";
   label = "Hold Ctrl / Tap to Layer 0";
   flavor = "hold-preferred"; // prioritizes Ctrl on hold
