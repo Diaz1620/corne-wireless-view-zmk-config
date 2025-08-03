@@ -19,14 +19,18 @@
 
 
 / {
+  aliases {
+    layer0 = &to0;
+    hold_ctrl = &kp_ctrl;
+  };
 
-      hold_ctrl_tap_to_base: behavior_hold_tap {
-                         compatible = "zmk,behavior-hold-tap";
-                         label = "Hold Ctrl / Tap to Layer 0";
-                         flavor = "hold-preferred"; // prioritizes Ctrl on hold
-                         tapping-term-ms = <200>;   // match your global settings
-                         bindings = <&kp LCTRL &to 0>;
-                       };
+  hold_ctrl_tap_to_base: behavior_hold-tap {
+    compatible = "zmk,behavior-hold-tap";
+    label = "Hold Ctrl / Tap to Layer 0";
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&hold_ctrl &layer0>;
+  };
 
         keymap {
                 compatible = "zmk,keymap";
